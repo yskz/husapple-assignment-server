@@ -1,0 +1,3 @@
+[submodule "husapple-protocol"]
+	path = src/protocol
+	url = https://github.com/yskz/husapple-protocol.git
