@@ -1,0 +1,36 @@
+{
+  "name": "number-auction-game-server",
+  "version": "1.0.0",
+  "description": "Number Auction game server",
+  "main": "build/server.js",
+  "scripts": {
+    "lint": "eslint src/*.js",
+    "build": "webpack --config ./webpack/prod.config.js",
+    "prestart": "yarn build",
+    "start": "DOTENV_CONFIG_PATH=.env node build/server.js",
+    "dev": "nodemon -L",
+    "test": "yarn lint"
+  },
+  "author": "Yoshikazu Satake <yskz@metamagic.co.jp>",
+  "license": "AGPL-3.0-or-later",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ws": "^7.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "eslint-plugin-node": "^11.1.0",
+    "nodemon": "^2.0.4",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-merge": "^5.1.2"
+  },
+  "eslintConfig": {
+    "root": true
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.1",
+    "utf-8-validate": "^5.0.2"
+  }
+}
