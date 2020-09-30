@@ -1,0 +1,10 @@
+{
+  "restartable": "rs",
+  "env": {
+    "DOTENV_CONFIG_PATH": ".env"
+  },
+  "watch": ["src"],
+  "ignore": ["*~"],
+  "ext": "js,json",
+  "exec": "node ./src/index.js"
+}
