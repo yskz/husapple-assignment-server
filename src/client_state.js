@@ -415,6 +415,7 @@ Game.StartGame = class extends Game.InGameBase {
 
         const gameInfo = this.createGameInfo(client, gameContext);
         if (!gameInfo) return;
+        client.sendMessage(new Message.Matching.GameStart(gameInfo));
         console.log(`game start : ${client.getIdTextForLog()}`);
         client.changeState(new Game.Bidding(player)); // ゲーム開始時はターン開始を兼ねるため、ゲーム開始ステートには移行しません
     }
