@@ -1,4 +1,4 @@
-/* eslint no-process-exit: 0 */
+/* eslint n/no-process-exit: 0 */
 
 const dotenv = require('dotenv');
 dotenv.config();
