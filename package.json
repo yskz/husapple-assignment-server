@@ -2,12 +2,13 @@
   "name": "number-auction-game-server",
   "version": "1.0.0",
   "description": "Number Auction game server",
-  "main": "build/server.js",
+  "main": "build/server.cjs",
+  "type": "module",
   "scripts": {
     "lint": "eslint src/*.js",
-    "build": "webpack --config ./webpack/prod.config.js",
+    "build": "webpack --config ./webpack/prod.config.cjs",
     "prestart": "yarn build",
-    "start": "DOTENV_CONFIG_PATH=.env node build/server.js",
+    "start": "DOTENV_CONFIG_PATH=.env node build/server.cjs",
     "dev": "nodemon -L",
     "test": "yarn lint"
   },

@@ -1,4 +1,4 @@
-const clientState = require('./client_state');
+import * as clientState from './client_state.js';
 
 class Client {
     constructor(clientManager, address, port, websocket) {
@@ -148,6 +148,4 @@ class Client {
     }
 }
 
-module.exports = {
-    Client: Client,
-};
+export { Client };

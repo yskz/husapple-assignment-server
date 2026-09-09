@@ -127,7 +127,4 @@ class GameContext {
     }
 }
 
-module.exports = {
-    Player: Player,
-    GameContext: GameContext,
-}
+export { Player, GameContext };

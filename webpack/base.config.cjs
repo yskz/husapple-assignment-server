@@ -10,7 +10,7 @@ module.exports = {
         server: path.resolve("src", "index.js")
     },
     output: {
-        filename: "[name].js",
+        filename: "[name].cjs",
 		path: distDir,
 		libraryTarget: 'commonjs2'
     },

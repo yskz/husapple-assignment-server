@@ -1,8 +1,9 @@
-const protocol = require('./protocol');
+import * as protocol from './protocol/index.js';
+import { getInstance } from './session_manager.js';
+import { GameObject as SessionPlayerGameObject } from './session_player.js';
 const Message = protocol.Message;
 const GameInfo = protocol.GameInfo;
-const sessionManager = require('./session_manager').getInstance();
-const SessionPlayerGameObject = require('./session_player').GameObject;
+const sessionManager = getInstance();
 
 function createGameInfo(client, myPlayer, gameContext) {
     const myPlayerId = myPlayer.id;
@@ -554,13 +555,4 @@ Game.FinishGame = class extends Sleep {
 }
 
 
-module.exports = {
-    Unknown: Unknown,
-    Sleep: Sleep,
-    ConnectedBase: ConnectedBase,
-    WaitSignIn: WaitSignIn,
-    SignInedIdle: SignInedIdle,
-    InSessionBase: InSessionBase,
-    Matching: Matching,
-    Game: Game,
-};
+export { Unknown, Sleep, ConnectedBase, WaitSignIn, SignInedIdle, InSessionBase, Matching, Game };

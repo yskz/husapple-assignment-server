@@ -1,18 +1,19 @@
 /* eslint n/no-process-exit: 0 */
 
-const dotenv = require('dotenv');
+import dotenv from 'dotenv';
+import { WebSocketServer } from 'ws';
+import { ClientManager } from './client_manager.js';
+import './session_manager.js'; // セッションマネージャーを明示的に作成するためにimportします
+
 dotenv.config();
 
 async function main() {
     const env = process.env;
     const wsHost = env.WS_HOST || undefined;
     const wsPort = env.WS_PORT || 4000;
-    const webSocket = require('ws');
-    const ClientManager = require('./client_manager').ClientManager;
     const clientManager = new ClientManager();
-    require('./session_manager'); // セッションマネージャーを明示的に作成するためにrequireします
 
-    const wss = new webSocket.Server({ host: wsHost, port: wsPort });
+    const wss = new WebSocketServer({ host: wsHost, port: wsPort });
     wss.addListener('connection', (ws, req) => {
         const socket = req.socket;
         const remoteAddress = socket.remoteAddress;
