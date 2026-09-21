@@ -1,4 +1,4 @@
-const Session = require('./session').Session;
+import { Session } from './session.js';
 
 class SessionManager {
     constructor() {
@@ -34,6 +34,8 @@ class SessionManager {
 
 const sessionManager = new SessionManager();
 
-module.exports = {
-    getInstance: function () { return sessionManager; },
+function getInstance() {
+    return sessionManager;
 }
+
+export { getInstance };

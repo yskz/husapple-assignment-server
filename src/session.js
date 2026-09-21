@@ -1,6 +1,6 @@
-const crypto = require('crypto');
-const Player = require('./session_player').SessionPlayer;
-const GameContext = require('./game_context').GameContext;
+import crypto from 'node:crypto';
+import { SessionPlayer as Player } from './session_player.js';
+import { GameContext } from './game_context.js';
 
 const issueIndex = (function () {
     let idx = 0;
@@ -197,6 +197,4 @@ class Session {
     }
 }
 
-module.exports = {
-    Session: Session,
-}
+export { Session };

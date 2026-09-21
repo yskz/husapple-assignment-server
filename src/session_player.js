@@ -1,4 +1,4 @@
-const crypto = require('crypto');
+import crypto from 'node:crypto';
 
 class GameObject {
     constructor(gameContext, sessionPlayer) {
@@ -85,7 +85,4 @@ class SessionPlayer {
 }
 
 
-module.exports = {
-    GameObject: GameObject,
-    SessionPlayer: SessionPlayer,
-}
+export { GameObject, SessionPlayer };

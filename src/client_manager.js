@@ -1,4 +1,4 @@
-const Client = require('./client').Client;
+import { Client } from './client.js';
 
 class ClientManager {
     constructor() {
@@ -47,6 +47,4 @@ class ClientManager {
     }
 }
 
-module.exports = {
-    ClientManager: ClientManager,
-};
+export { ClientManager };
